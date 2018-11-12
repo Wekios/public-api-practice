@@ -1,0 +1,43 @@
+html,
+body {
+    height: 100%;
+    width: 100%;
+    font-size: 100%;
+    font-family: "Roboto", sans-serif;
+    text-align: center;
+    background-color: #e7e7e7;
+}
+
+// Responsive Config
+
+$site-desk-design : 1440;
+$container-desk   : 1140;
+$site-mob-design  : 375;
+$container-mob    : 330;
+$font-size-base   : 10;
+$white: #ffff;
+$red: indianred;
+
+html {
+    @include fontSizeVw($font-size-base, $font-size-base);
+
+    @media screen and (min-width: 1441px) {
+        font-size: 10px;
+    }
+}
+
+.container {
+    margin: 0 auto;
+    width: calcVw($container-mob,$site-mob-design);
+    display: grid;
+    
+    @include breakpoint(desktop) {
+        width: calcVw($container-desk,$site-desk-design);
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+
+.title {
+    padding: 4rem;
+    text-transform: uppercase;
+}

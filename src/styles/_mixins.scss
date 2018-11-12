@@ -1,0 +1,32 @@
+// Calculate vw from pixels
+
+@function calcVw($target, $container) {
+    @return ($target / $container) * 100vw;
+  }
+
+// Responsive font size
+
+@mixin fontSizeVw($fs-phone, $fs-desktop) {
+    font-size: #{$fs-desktop}px;
+
+    @include breakpoint(phone) {
+        font-size: calcVw($fs-phone, $site-mob-design);
+    }
+
+    @include breakpoint(desktop) {
+        font-size: calcVw($fs-desktop, $site-desk-design);
+    }
+}
+
+// Breakpoint media queries
+
+@mixin breakpoint($break) {
+
+    @if $break == phone {
+        @media (max-width: 767px)                           { @content; }
+    }
+  
+    @else if $break == desktop {
+        @media (min-width: 768px)                          { @content; }
+    }
+  }

@@ -1,0 +1,29 @@
+.card {
+    margin: 2rem;
+    box-shadow: 2px 4px 25px rgba(0, 0, 0, 0.1);
+    border-radius: 12px;
+    overflow: hidden;
+    transition: all 0.1s linear;
+    background: center / cover no-repeat;
+    height: 20rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    color: $white;
+    text-shadow: 1px 0 0 #000, 0 -1px 0 #000, 0 1px 0 #000, -1px 0 0 #000;
+    
+    h2 {
+        font-size: 3rem;
+        font-weight: 700;
+    }
+
+    p {
+        font-size: 2rem;
+        font-weight: 400;
+        color: black;
+        padding: 1rem 2rem;
+        background: rgba(255,255,255, 0.4)
+    }
+
+}
